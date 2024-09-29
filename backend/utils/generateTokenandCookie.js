@@ -5,7 +5,7 @@ export const generateTokenAndSetCookie = (res, userId) => {
    const token = jwt.sign({userId}, process.env.JWT_KEY, {expiresIn: "2h"})
    console.log(token);
    
-
+  //attach the cookie to the response
    res.cookie("token", token, {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
