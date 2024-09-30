@@ -22,7 +22,7 @@ import { generateTokenAndSetCookie } from "../utils/generateTokenandCookie.js";
      user.lastLogin = new Date();
      //save the user to database
      await user.save();
-     res.status.json({
+     res.status(200).json({
       success: true,
       message: "login successful"
      })

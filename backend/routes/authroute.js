@@ -5,12 +5,14 @@ import { logout } from "../controllers/logout.js";
 import { forgotPassword } from "../controllers/forgotPassword.js";
 import { verifyEmail } from "../controllers/verifyEmail.js";
 import { resetPassword } from "../controllers/resetPassword.js";
+import { verifyToken } from "../middleware/verifyToken.js";
+import { checkAuth } from "../controllers/checkAuth.js";
 
 
 
 const router = express.Router();
 
-// router.get('/check-auth', verifyToken, checkAuth)
+router.get('/check-auth', verifyToken, checkAuth)
 
 router.post('/signup', signup)
 router.post('/verify-email', verifyEmail)
