@@ -22,6 +22,22 @@ export const sendVerificationEmail = async (email, verificationToken) => {
     throw new Error(`Error sending verification email: ${error}`);
 }
 }
+// export const sendWelcomeEmail = async(email, name) => {
+//     const recipient = [{email}];
+//         try{
+//           const response = await client.send({
+//             from: sender,
+//             to: recipient,
+//             subject: ""
+//           })
+//         }
+    
+// }
+
+
+
+
+
 //send password reset email for forgot password page
 export const sendPasswordResetEmail = async(email, resetURL) => {
    const recipient = [{email}]
