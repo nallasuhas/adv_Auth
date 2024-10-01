@@ -7,6 +7,8 @@ import { sendVerificationEmail } from "../mailtrap/emails.js"
 export const signup = async (req, res) => {
     //extract info from request
     const {email, password, name} = req.body
+    console.log(email,password);
+    
     try{
         if(!email || !password || !name ){
             throw new Error("All fields are required")
@@ -40,6 +42,10 @@ export const signup = async (req, res) => {
         res.status(201).json({
             success: true,
             message: "User created successfully",
+            user: {
+				...user._doc,
+				password: undefined,
+			},
 
         })
     }
