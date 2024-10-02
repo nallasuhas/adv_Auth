@@ -4,6 +4,8 @@ import SignUpPage from "./pages/SignUpPage.jsx"
 import LoginPage from "./pages/LoginPage.jsx"
 import DashboardPage from "./pages/DashboardPage.jsx"
 import EmailVerificationPage from "./pages/EmailVerificationPage.jsx"
+import ForgotPasswordPage from "./pages/ForgotPasswordPage.jsx"
+import ResetPasswordPage from "./pages/ResetPasswordPage.jsx"
 
 function App() {
  
@@ -20,6 +22,8 @@ function App() {
         <Route path="/signup" element={<SignUpPage/>}  /> 
         <Route path="/login" element={<LoginPage/>} />
         <Route path="/verify-email"  element={<EmailVerificationPage/>} />
+        <Route path="/forgot-password" element={<ForgotPasswordPage/>}  />
+        <Route path="/reset-password/:token"  element={<ResetPasswordPage/>} />
       </Routes>
     </div>
     </>

@@ -18,7 +18,7 @@ export const forgotPassword = async (req, res) => {
 
         await user.save();
 
-        await sendPasswordResetEmail(user.email,`http://localhost:5713/reset-password/${resetToken}` )
+        await sendPasswordResetEmail(user.email,`http://localhost:5173/reset-password/${resetToken}` )
 
         
 
