@@ -13,7 +13,12 @@ export const verifyEmail = async (req, res) => {
         user.verificationTokenExpiry = undefined;
         await user.save();
 
-        res.status(200).json({success: true, messasge: "Email verified successfully"})
+        res.status(200).json({success: true, 
+            messasge: "Email verified successfully",
+            user: {
+				...user._doc,
+				password: undefined,
+			},})
     }catch (error) {
 		console.log("error in verifyEmail ", error);
 		res.status(500).json({ success: false, message: "Server error" });

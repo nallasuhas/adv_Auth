@@ -24,7 +24,11 @@ import { generateTokenAndSetCookie } from "../utils/generateTokenandCookie.js";
      await user.save();
      res.status(200).json({
       success: true,
-      message: "login successful"
+      message: "login successful",
+      user: {
+				...user._doc,
+				password: undefined,
+			},
      })
     }
     catch(e){
